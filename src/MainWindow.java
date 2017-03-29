@@ -5,37 +5,28 @@ import java.awt.*;
 /**
  * Created by YVayneR on 3/27/2017.
  */
-public class MainWindow extends JFrame {
+public class MainWindow {
+    public static JFrame jframe;
     private static final String WINDOWS_TITLE = "Tetris Battle";
     private static final int WIDTH = 1204;
     private static final int HEIGHT = 768;
-    private JPanel pan;
+    private static JPanel pan;
 
     public MainWindow(){
-        super.setTitle(WINDOWS_TITLE);
-        super.setSize(WIDTH, HEIGHT);
+        jframe = new JFrame();
+        jframe.setTitle(WINDOWS_TITLE);
+        jframe.setSize(WIDTH, HEIGHT);
 
         MainScreen aux = new MainScreen();
-        super.setContentPane(aux);
-        super.setVisible(true);
-        super.setResizable(false);
-
+        jframe.setContentPane(aux);
+        jframe.setVisible(true);
+        jframe.setResizable(false);
     }
 
-    public JPanel getPanel() {
-        return pan;
+    public static void setContent(StartGame panel) {
+        jframe.setContentPane(panel);
+        jframe.repaint();
     }
-
-    public void setPanel(JPanel panel) {
-        this.pan = panel;
-    }
-
-
-    public static void loadGame() {
-
-    }
-
-
 
 }
 

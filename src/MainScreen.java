@@ -44,10 +44,8 @@ public class MainScreen extends JPanel {
     }
 
     private void btnPlayGameActionPerformed(ActionEvent e) {
-
-
+        MainWindow.setContent(new StartGame());
     }
-
 
     private void btnExitGameActionPerformed(ActionEvent e) {
         int dialogButton = JOptionPane.YES_NO_OPTION;
